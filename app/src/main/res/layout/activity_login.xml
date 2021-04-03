@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="logactivity"
+            type="com.example.dt.simpletask.view.login.Login" />
+
+        <variable
+            name="LVM"
+            type="com.example.dt.simpletask.view.login.LoginViewModel" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black"
+        tools:context=".view.login.Login">
+
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent=".10"
+            tools:ignore="MissingConstraints" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/image_description"
+            android:src="@drawable/logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+
+
+        <EditText
+            android:id="@+id/PhoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginHorizontal="80dp"
+            android:text="@={LVM.user.email}"
+            android:background="@drawable/rounded_orange"
+            android:clickable="true"
+            android:focusable="true"
+            android:fontFamily="@font/amplesoftpro"
+            android:gravity="center"
+            android:hint="@string/phone_number"
+            android:textColor="@color/gray"
+            android:textColorHint="@color/gray"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/imageView"
+            tools:ignore="MissingConstraints,TextFields"
+            tools:layout_editor_absoluteX="20dp"
+            android:inputType="textEmailAddress"
+            android:importantForAutofill="no" />
+
+        <EditText
+            android:id="@+id/Password"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:layout_marginHorizontal="80dp"
+            android:background="@drawable/rounded_orange"
+            android:clickable="true"
+            android:layout_marginTop="20sp"
+            android:text="@={LVM.user.password}"
+            android:focusable="true"
+            android:fontFamily="@font/amplesoftpro"
+            android:gravity="center"
+            android:hint="@string/password"
+            android:textColor="@color/gray"
+            android:textColorHint="@color/gray"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/PhoneNumber"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="20dp"
+            android:importantForAutofill="no"
+            android:inputType="textPassword" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="80dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/amplesoftpro"
+            android:text="@string/forget_password"
+            android:textColor="@color/orange"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/Password" />
+
+
+        <TextView
+            android:id="@+id/SignIn"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:layout_marginHorizontal="107dp"
+            android:background="@drawable/rounded_orange"
+            android:clickable="true"
+            android:onClick="@{() -> logactivity.checkLogin()}"
+            android:focusable="true"
+            android:fontFamily="@font/amplesoftpro"
+            android:gravity="center"
+            android:text="@string/sign_in"
+            android:textColor="@color/gray"
+            android:layout_marginTop="20sp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="20dp" />
+
+        <TextView
+            android:id="@+id/SignUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="60dp"
+            android:fontFamily="@font/amplesoftpro"
+            android:text="@string/don_t_have_an_account_sign_up"
+            android:textColor="@color/orange"
+            android:textSize="18sp"
+            android:layout_marginTop="40dp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/SignIn" />
+
+        <TextView
+            android:id="@+id/Skip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="60dp"
+            android:fontFamily="@font/amplesoftpro"
+            android:text="@string/skip"
+            android:textColor="@color/orange"
+            android:textSize="18sp"
+            android:layout_marginTop="40dp"
+            android:onClick="@{() -> LVM.skipped()}"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/SignUp" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

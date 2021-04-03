@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Simple Task</string>
+    <string name="image_description">image description</string>
+    <string name="phone_number">Phone number</string>
+    <string name="password">Password</string>
+    <string name="forget_password">Forget Password</string>
+    <string name="sign_in">Sign in</string>
+    <string name="don_t_have_an_account_sign_up">Don\'t have an account? Sign up</string>
+    <string name="skip">Skip</string>
+    <string name="validate_Field">Valid Field</string>
+    <string name="discover">Discover</string>
+    <string name="what_s_new">What\'s New!</string>
+    <string name="trending">Trending</string>
+</resources>
